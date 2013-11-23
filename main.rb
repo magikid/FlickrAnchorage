@@ -48,9 +48,14 @@ args[:max_taken_date] = '2013-01-01 00:00:00'
 args[:accuracy] = 1 # the default is street only granularity [16], which most images aren't...
 discovered_pictures = flickr.photos.search args
 
+heatmap = Heatmap.new
+
 puts "Number of pics found: ", discovered_pictures.length
 discovered_pictures.each{|pic|
     puts pic.title
     info = flickr.photos.geo.getLocation(:photo_id => pic.id)
     puts info.location.latitude.to_s + ", " + info.location.longitude.to_s
+    heatmap << Heatmap::Area.new(info.location.latitude.abs-60, info.location.longitude.abs-149)
 } 
+
+heatmap.output("anchorage.png")
