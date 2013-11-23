@@ -1,8 +1,10 @@
 #!/usr/ruby
 require 'flickraw'
+require 'heatmap'
 
 FlickRaw.api_key = '8ae842cd467ee53bb5413ecad09edb99'
 FlickRaw.shared_secret = '4bedd2447b006d17'
+FlickRaw.secure = true
 
 def initial_login
     token = flickr.get_request_token
@@ -46,11 +48,9 @@ args[:max_taken_date] = '2013-01-01 00:00:00'
 args[:accuracy] = 1 # the default is street only granularity [16], which most images aren't...
 discovered_pictures = flickr.photos.search args
 
-puts "Photos: ", discovered_pictures
-puts "Length: ", discovered_pictures.length
+puts "Number of pics found: ", discovered_pictures.length
 discovered_pictures.each{|pic|
-    #puts pic
-    #id = pic.id
-    #secret = pic.secret
     puts pic.title
+    info = flickr.photos.geo.getLocation(:photo_id => pic.id)
+    puts info.location.latitude.to_s + ", " + info.location.longitude.to_s
 } 
