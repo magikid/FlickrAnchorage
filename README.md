@@ -1,13 +1,14 @@
+[![Stories in Ready](https://badge.waffle.io/magikid/flickranchorage.png?label=ready&title=Ready)](https://waffle.io/magikid/flickranchorage)
 # FlickrAnchorage
 
 Find which locations are most popular photo ops in Anchorage, AK.
 
 # Installation
 
-Clone the repo
-Run bundle install
-Install ImageMagick package (eg. sudo apt-get install imagemagick)
-Run main.rb
+1. Clone the repo `git clone git@gitlab.com:magikid/flickranchorage.git`
+2. Run `bundle install`
+3. Install ImageMagick package (eg. `sudo apt-get install imagemagick`)
+4. Run `ruby main.rb`
 
 ## References
 
