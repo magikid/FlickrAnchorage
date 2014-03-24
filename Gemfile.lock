@@ -2,6 +2,7 @@ GEM
   specs:
     flickraw (0.9.7)
     heatmap (0.1.1)
+    rake (10.1.0)
 
 PLATFORMS
   ruby
@@ -9,3 +10,4 @@ PLATFORMS
 DEPENDENCIES
   flickraw
   heatmap
+  rake
