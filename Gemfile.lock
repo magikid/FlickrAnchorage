@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     flickraw (0.9.7)
     heatmap (0.1.1)
